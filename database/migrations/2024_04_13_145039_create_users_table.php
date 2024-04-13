@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('org_id');
+            $table->foreign('org_id')->references('id')->on('orgs');
             $table->string('name');
+            $table->date('birthday')->nullable();
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('account')->unique();
             $table->string('password');
-            $table->rememberToken();
+            $table->enum('status', ['pending', 'activated'])->default('pending');
             $table->timestamps();
         });
     }
