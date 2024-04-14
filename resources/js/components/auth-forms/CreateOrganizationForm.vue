@@ -3,7 +3,7 @@
         <h2 class="text-2xl font-bold mb-5">建立機關單位</h2>
         <form @submit.prevent="createOrganization" class="auth-form">
             <div>
-                <label for="org-no" class="auth-label">編號</label>
+                <label for="org-no" class="auth-form-label">編號</label>
                 <input type="text" id="org-no" v-model="orgNo" class="auth-form-input">
             </div>
 
@@ -35,6 +35,7 @@ const baseUrl = document.head.querySelector('meta[name="base-url"]').getAttribut
 async function createOrganization() {
     if (orgNo.value === '' || title.value === '') {
         alert('必填欄位不得為空');
+        return;
     }
 
     try {

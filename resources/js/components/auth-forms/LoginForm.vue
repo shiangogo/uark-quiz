@@ -40,6 +40,7 @@ const password = ref('');
 async function createSession() {
     if (account.value === '' || password.value === '') {
         alert('帳號或密碼不得為空');
+        return;
     }
     try {
         const response = await axios.post(baseUrl + '/sessions', {
