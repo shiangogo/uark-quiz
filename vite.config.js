@@ -3,6 +3,14 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
+    build: {
+        rollupOptions: {
+            output: {
+                entryFileNames: 'assets/app.js',
+                assetFileNames: 'assets/[name].[ext]',
+            }
+        }
+    },
     plugins: [
         laravel({
             input: [

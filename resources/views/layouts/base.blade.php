@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="base-url" content="{{ url('/') }}">
     <title>Uark Quiz</title>
-    @vite('resources/css/app.css')
+    <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
 </head>
 <body>
     @yield('content')
-    @vite('resources/js/app.js')
+    <script src="{{ asset('build/assets/app2.js') }}"></script>
 </body>
 </html>
