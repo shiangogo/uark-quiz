@@ -1,16 +1,30 @@
 <template>
-    <h2>請登入</h2>
-    <form @submit.prevent="createSession">
-        <label for="account">帳號</label>
-        <input type="text" id="account" v-model="account">
-        
-        <label for="password">密碼</label>
-        <input type="password" id="password" v-model="password">
-
-        <button type="submit">登入</button>
-    </form>
-    <button @click.prevent="authOptionStore.goToRegister">註冊頁面</button>
-    <button @click.prevent="authOptionStore.goToCreateOrganization">建立機關單位頁面</button>
+    <div class="max-w-md mx-auto my-10">
+      <h2 class="text-2xl font-bold mb-5">請登入</h2>
+      <form @submit.prevent="createSession" class="auth-form">
+        <div>
+          <label for="account" class="auth-form-label">帳號</label>
+          <input type="text" id="account" v-model="account" class="auth-form-input" />
+        </div>
+        <div>
+          <label for="password" class="auth-form-label">密碼</label>
+          <input type="password" id="password" v-model="password" class="auth-form-input" />
+        </div>
+        <div>
+          <button type="submit" class="auth-form-submit">
+            登入
+          </button>
+        </div>
+      </form>
+      <div class="auth-switch-btn-container">
+        <button @click.prevent="authOptionStore.goToRegister" class="auth-switch-btn">
+          註冊頁面
+        </button>
+        <button @click.prevent="authOptionStore.goToCreateOrganization" class="auth-switch-btn">
+          建立機關單位頁面
+        </button>
+      </div>
+    </div>
 </template>
 
 <script setup>

@@ -1,30 +1,51 @@
 <template>
-    <h2>註冊新帳戶</h2>
-    <form @submit.prevent="createUser">
-        <label for="org-no">機關編號</label>
-        <input type="text" id="org-no" v-model="orgNo">
+    <div class="max-w-md mx-auto my-10">
+        <h2 class="text-2xl font-bold mb-5">註冊新帳戶</h2>
+        <form @submit.prevent="createUser" class="auth-form">
+            <div>
+                <label for="org-no" class="auth-form-label">機關編號</label>
+                <input type="text" id="org-no" v-model="orgNo" class="auth-form-input">
+            </div>
 
-        <label for="name">姓名</label>
-        <input type="text" id="name" v-model="name">
+            <div>
+                <label for="name" class="auth-form-label">姓名</label>
+                <input type="text" id="name" v-model="name" class="auth-form-input">
+            </div>
 
-        <label for="birthday">生日</label>
-        <input type="date" id="birthday" v-model="birthday">
+            <div>
+                <label for="birthday" class="auth-form-label">生日</label>
+                <input type="date" id="birthday" v-model="birthday" class="auth-form-input">
+            </div>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" v-model="email">
+            <div>
+                <label for="email" class="auth-form-label">Email</label>
+                <input type="email" id="email" v-model="email" class="auth-form-input">
+            </div>
 
-        <label for="account">帳號</label>
-        <input type="text" id="account" v-model="account">
+            <div>
+                <label for="account" class="auth-form-label">帳號</label>
+                <input type="text" id="account" v-model="account" class="auth-form-input">
+            </div>
         
-        <label for="password">密碼</label>
-        <input type="password" id="password" v-model="password">
+            <div>
+                <label for="password" class="auth-form-label">密碼</label>
+                <input type="password" id="password" v-model="password" class="auth-form-input">
+            </div>
 
-        <label for="apply-file">申請文件</label>
-        <input type="file" id="apply-file" @change="handleFileChange">
-        <button type="submit">建立帳戶</button>
-    </form>
-    <button @click.prevent="authOptionStore.goToLogin">登入頁面</button>
-    <button @click.prevent="authOptionStore.goToCreateOrganization">建立機關單位頁面</button>
+            <div>
+                <label for="apply-file" class="auth-form-label">申請文件</label>
+                <input type="file" id="apply-file" @change="handleFileChange" class="auth-form-input">
+            </div>
+            
+            <div>
+                <button type="submit" class="auth-form-submit">建立帳戶</button>
+            </div>
+        </form>
+        <div>
+            <button @click.prevent="authOptionStore.goToLogin" class="auth-switch-btn">登入頁面</button>
+            <button @click.prevent="authOptionStore.goToCreateOrganization" class="auth-switch-btn">建立機關單位頁面</button>
+        </div>
+    </div>
 </template>
 
 <script setup>

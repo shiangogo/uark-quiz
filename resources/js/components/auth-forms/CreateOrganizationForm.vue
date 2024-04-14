@@ -1,15 +1,25 @@
 <template>
-    <h2>建立機關單位</h2>
-    <form @submit.prevent="createOrganization">
-        <label for="org-no">編號</label>
-        <input type="text" id="org-no" v-model="orgNo">
+    <div class="max-w-md mx-auto my-10">
+        <h2 class="text-2xl font-bold mb-5">建立機關單位</h2>
+        <form @submit.prevent="createOrganization" class="auth-form">
+            <div>
+                <label for="org-no" class="auth-label">編號</label>
+                <input type="text" id="org-no" v-model="orgNo" class="auth-form-input">
+            </div>
 
-        <label for="title">名稱</label>
-        <input type="text" id="title" v-model="title">
-        <button type="submit">建立機關單位</button>
-    </form>
-    <button @click.prevent="authOptionStore.goToLogin">登入頁面</button>
-    <button @click.prevent="authOptionStore.goToRegister">註冊頁面</button>
+            <div>
+                <label for="title" class="auth-form-label">名稱</label>
+                <input type="text" id="title" v-model="title" class="auth-form-input">
+            </div>
+            <div>
+                <button type="submit" class="auth-form-submit">建立機關單位</button>
+            </div>
+        </form>
+        <div class="auth-switch-btn-container">
+            <button @click.prevent="authOptionStore.goToLogin" class="auth-switch-btn">登入頁面</button>
+            <button @click.prevent="authOptionStore.goToRegister" class="auth-switch-btn">註冊頁面</button>
+        </div>
+    </div>
 </template>
 
 <script setup>
