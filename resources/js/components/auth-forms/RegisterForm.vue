@@ -3,12 +3,12 @@
         <h2 class="text-2xl font-bold mb-5">註冊新帳戶</h2>
         <form @submit.prevent="createUser" class="auth-form">
             <div>
-                <label for="org-no" class="auth-form-label">機關編號</label>
+                <label for="org-no" class="auth-form-label">機關編號<span class="text-red-500 text-sm">(必填)</span></label>
                 <input type="text" id="org-no" v-model="orgNo" class="auth-form-input">
             </div>
 
             <div>
-                <label for="name" class="auth-form-label">姓名</label>
+                <label for="name" class="auth-form-label">姓名<span class="text-red-500 text-sm">(必填)</span></label>
                 <input type="text" id="name" v-model="name" class="auth-form-input">
             </div>
 
@@ -18,22 +18,22 @@
             </div>
 
             <div>
-                <label for="email" class="auth-form-label">Email</label>
+                <label for="email" class="auth-form-label">Email<span class="text-red-500 text-sm">(必填)</span></label>
                 <input type="email" id="email" v-model="email" class="auth-form-input">
             </div>
 
             <div>
-                <label for="account" class="auth-form-label">帳號</label>
+                <label for="account" class="auth-form-label">帳號<span class="text-red-500 text-sm">(必填)</span></label>
                 <input type="text" id="account" v-model="account" class="auth-form-input">
             </div>
         
             <div>
-                <label for="password" class="auth-form-label">密碼</label>
+                <label for="password" class="auth-form-label">密碼<span class="text-red-500 text-sm">(必填)</span></label>
                 <input type="password" id="password" v-model="password" class="auth-form-input">
             </div>
 
             <div>
-                <label for="apply-file" class="auth-form-label">申請文件</label>
+                <label for="apply-file" class="auth-form-label">申請文件<span class="text-red-500 text-sm">(必填)</span></label>
                 <input type="file" id="apply-file" @change="handleFileChange" class="auth-form-input">
             </div>
             
